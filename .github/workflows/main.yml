@@ -1,4 +1,4 @@
-name: Install dependencies and Run Docker on PR Merge
+name: Build and Run Docker on PR Merge
 
 on:
   push:
