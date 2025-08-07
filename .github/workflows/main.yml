@@ -1,17 +1,16 @@
-
 name: Build and Run Docker on PR Merge
 
 on:
   push:
     branches:
-      - main  # Only run when a PR is merged into main
+      - main  # Trigger only when PR is merged into main
 
 jobs:
   build-and-docker:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
+      # Step 1: Checkout code
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -25,22 +24,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build the application (if you have a build step)
-      - name: Build application
-        run: npm run build
+      # ❌ REMOVED: No build step, because your app doesn't need it
 
-      # Step 5: Build Docker image
+      # Step 4: Build Docker image
       - name: Build Docker image
         run: docker build -t my-node-app .
 
-      # Step 6: Run Docker container
+      # Step 5: Run Docker container
       - name: Run Docker container
         run: docker run -d -p 3000:3000 --name my-node-app-container my-node-app
 
-      # Optional: Health check or curl to verify container is working
+      # Step 6: Test container is running
       - name: Test container
         run: |
-          sleep 5  # wait for the server to start
+          sleep 5
           curl -f http://localhost:3000 || exit 1
 
       # Step 7: Stop and remove container
