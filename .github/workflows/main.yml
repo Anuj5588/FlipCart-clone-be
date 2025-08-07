@@ -6,7 +6,7 @@ on:
       - main  # Trigger only when PR is merged into main
 
 jobs:
-  build-and-docker:
+  install-dependencies:
     runs-on: ubuntu-latest
 
     steps:
