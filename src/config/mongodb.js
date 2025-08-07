@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 
 // Replace with your MongoDB connection string
-const mongoURI = 'mongodb://127.0.0.1:27017/ecomdb';
+const mongoURI = process.env.MongoDB_URL;
 
  export const connectionwithMongoose=async()=>{ 
     try{
