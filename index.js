@@ -38,7 +38,7 @@ app.use('/api/post',postRouter)
 
 
 
- app.listen(port,(err)=>{
+ app.listen(process.env.PORT,'0.0.0.0',(err)=>{
 
 
     if(err){
