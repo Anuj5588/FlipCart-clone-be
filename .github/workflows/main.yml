@@ -1,4 +1,4 @@
-name: Build and Run Docker on PR Merge
+name: Install dependencies and Run Docker on PR Merge
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main  # Trigger only when PR is merged into main
 
 jobs:
-  build-and-docker:
+  install-dependencies:
     runs-on: ubuntu-latest
 
     steps:
