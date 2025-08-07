@@ -47,7 +47,7 @@ export default class UserController{
       
           // Verify the OTP
           const verificationCheck = await client.verify.v2
-            .services("VA7d25418b57e3326829e7e99b7520a947")
+            .services(process.env.VERIFICATION_CHECKS)
             .verificationChecks.create({
               code: otp,
               to: '+918299372124'
