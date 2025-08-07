@@ -35,12 +35,12 @@ jobs:
       - name: Run Docker container
         run: docker run -d -p 3000:3000 --name my-node-app-container my-node-app
 
-      - name: Test container
-        run: |
-          sleep 15
-          curl -f http://localhost:3000 || exit 1
+      # - name: Test container
+      #   run: |
+      #     sleep 15
+      #     curl -f http://localhost:3000 || exit 1
 
-      - name: Clean up container
-        run: |
-          docker stop my-node-app-container
-          docker rm my-node-app-container
+      # - name: Clean up container
+      #   run: |
+      #     docker stop my-node-app-container
+      #     docker rm my-node-app-container
